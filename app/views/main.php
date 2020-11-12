@@ -38,67 +38,66 @@ echo "</div>";
    }
 echo "</div>";
 ?>
- <!-- Start  silder -->
- <div class="slider">
-    <div id="mysild" class="carousel slide " data-ride="carousel" >
+ <!-- start of hero -->
+  <section class="hero-slider hero-style ">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="slide-inner slide-bg-image"
+            data-background="https://images.pexels.com/photos/3178938/pexels-photo-3178938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+            <div class="black-bg"></div>
+            <div class="container">
+              <h1>New Collection</h1>
+            </div>
+          </div>
+          <!-- end slide-inner -->
+        </div>
 
-         <div class="carousel-inner">
-              <div class="carousel-item  carousel-one active">
-               <div class="slider_txt">
-            <div class="slide-title">
-              <h2>تخفيضــات</h2>
+        <div class="swiper-slide">
+          <div class="slide-inner slide-bg-image"
+            data-background="https://images.pexels.com/photos/583842/pexels-photo-583842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+            <div class="black-bg"></div>
+            <div class="container">
+              <div class="clearfix"></div>
             </div>
-            <div class="slide-text">
-              <p>لابتوبات لينوفو الجديدة بأسعار مغرية ومميزات ممتازة.</p>
-            </div>
-            <div class="clearfix"></div>
-            <div class="slide-btns">
-              <a href="" class="theme-btn-s2">إضافة للسلة</a>
-              <a href="" class="theme-btn-s3">عرض تفاصيل المنتج</a>
+          </div>
+          <!-- end slide-inner -->
+        </div>
+
+        <div class="swiper-slide">
+          <div class="slide-inner slide-bg-image"
+            data-background="https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+            <div class="black-bg"></div>
+            <div class="container">
+              <div class="clearfix"></div>
             </div>
           </div>
         </div>
-             <div class="carousel-item carousel-tow"></div>
-             <div class="carousel-item carousel-three"></div>
 
-             <ol class="carousel-indicators ">
-               <li data-target="#mysild" data-slide-to="0" ></li>
-               <li data-target="#mysild" data-slide-to="1"class="active"></li>
-               <li data-target="#mysild" data-slide-to="2"></li>
-             </ol>
+        <div class="swiper-slide">
+          <div class="slide-inner slide-bg-image"
+            data-background="https://images.pexels.com/photos/887751/pexels-photo-887751.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+            <div class="black-bg"></div>
+            <div class="container">
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-         </div>
-     </div>
- </div>
-
-<!-- Product slider Start -->
-<!--div class="slider">
-  <div class="container">
-    <div class="owl-carousel">
-      <div class="item"><img src="app/assets/images/Acer.jpg"></div>
-      <div class="item"><img src="app/assets/images/lenovo4.png"></div>
-      <div class="item"><img src="app/assets/images/Acer_Chromebook_315_01_32ff69f880-300x274.jpg"></div>
-      <div class="item"><img src="app/assets/images/ASUS-Chromebook-C423-1-300x202 (1).jpg"></div>
-      <div class="item"><img src="app/assets/images/htc-desire-12_990b.jpg"></div>
+      <!-- swipper controls -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev" id="prev"></div>
+      <div class="swiper-button-next" id="next"></div>
     </div>
-     
-  </div>
-</div-->
+  </section>
+<!-- end of hero slider  -->
 
-
-<div id="demo" class="carousel slide" data-ride="carousel">
-
-  <!-- Indicators -->
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  
+<div class="text-right" id="section-title"><h1 style="margin: 2rem 4rem 0 4rem;">آخر المنتجات</h1></div>  
   <!-- The slideshow -->
-  <div class="container carousel-inner no-padding">
-    <div class="carousel-item active">
-    <div class="row">
+  <div class="container" style="padding: 0rem;">
+    <div class="active row orginize card-slider">
+    <main class="row main bg-grid product-store">
     <?php 
             $i=0;
             $rows=$data['products'];
@@ -109,27 +108,26 @@ echo "</div>";
               if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
-      <div class="col-md-3 col-sm-6">
-          <div class="product-store">
-              <div class="product-img">
+      <div class="col-md-3 col-sm-6 col-lg-3">
+          <div class="card">
+              <div class="card-img product-img">
                   <a href="#">
-                      
                       <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
                   </a>
                   <ul class="social">
-                      <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="main/shopingCart?id='<?=$id ;?>'" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
+                      <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View" style=" background: #F27523;"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="main/wishlist" data-tip="Add to Wishlist" style=" background: #F27523;"><i class="fa fa-heart"></i></a></li>
+                      <li><a href="main/shopingCart?id=<?=$id ;?>" data-tip="Add to Cart" class="cart"  data-id='=<?= $id; ?>' style=" background: #F27523;"><i class="fa fa-shopping-cart "></i></a></li>
                   </ul>
-                 
               </div>
-              <div class="product-content">
-                  <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
+              <div class="card-price product-content">
+               <div class="card-name title">
+                  <h3 class="title"><a href="#"><p><?php  echo $row->product_short_desc ?></p></a></h3>
                   <div class="price">
-                  $<?= $row->product_price ?>
+                  <p>$<?= $row->product_price ?></p>
                     <!-- <?php  echo $row->product_price ?> -->
                   </div>
                   <?PHP
@@ -149,9 +147,10 @@ echo "</div>";
                 </div>
           </div>
       </div>
+      </div>
       <?php $i++; } }?> 
-   
-    </div>
+   </div>
+    </main>
     </div>
     <div class="carousel-item">
     <div class="row">
@@ -165,7 +164,7 @@ echo "</div>";
               if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -178,7 +177,7 @@ echo "</div>";
                   <ul class="social">
                       <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                       <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="main/shopingCart?id='<?=$id ;?>'" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
+                      <li><a href="main/shopingCart?id=<?=$id ;?>" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
                   </ul>
                  
               </div>
@@ -222,7 +221,7 @@ echo "</div>";
               if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -270,13 +269,13 @@ echo "</div>";
     </div>
   
   <!-- Left and right controls -->
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+  <!-- <a class="carousel-control-prev" href="#demo" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </a>
   <a class="carousel-control-next" href="#demo" data-slide="next">
     <span class="carousel-control-next-icon"></span>
   </a>
-</div>
+</div> -->
 
 <!-- Product slider End -->
 
@@ -324,7 +323,7 @@ echo "</div>";
               // if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
